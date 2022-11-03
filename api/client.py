@@ -49,7 +49,7 @@ class Client(SingletonClass):
             "limit": limit,
             "viewId": 4,
             "order": ["occurtime ASC"],
-            "alarmLevel": ["1", "2"],
+            # "alarmLevel": ["1", "2"],
             "clearStopTime": "0",
         }
         return self.send_command(
