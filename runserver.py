@@ -16,9 +16,9 @@ class MyServer(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
-        self._set_headers()
-        self.wfile.write(get_all_incoming_alarms().encode())
-
+        if self.path == env.PATH:
+            self._set_headers()
+            self.wfile.write(get_all_incoming_alarms().encode())
 
 
 myServer = HTTPServer((hostName, hostPort), MyServer)
